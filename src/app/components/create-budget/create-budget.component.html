@@ -1,0 +1,111 @@
+<p-card header="Record an Expenditure" subheader="Select Type Of Expenditure:">
+  <div class="p-card-body py-0">
+    <!--body content starts-->
+    <div class="flex flex-wrap gap-3">
+      <div class="flex align-items-center">
+        <label class="mr-2" for="single">Single</label>
+        <p-radioButton (onClick)="radioSelectExpenditureType()" [(ngModel)]="selectedExpenditureType" id="single" inputId="single"
+                       name="expenditureType" value="Single"></p-radioButton>
+      </div>
+
+      <div class="flex align-items-center">
+        <p-radioButton (onClick)="radioSelectExpenditureType()" [(ngModel)]="selectedExpenditureType" id="recurring" inputId="recurring"
+                       name="expenditureType" value="Recurring"></p-radioButton>
+        <label class="ml-2" for="recurring">Recurring</label>
+      </div>
+    </div>
+
+    <div *ngIf="selectedExpenditureType==='Single'" class="singleExpenditure-form-group-wrapper">
+      <form [formGroup]="singleExpenditureForm" class=" my-4 p-2  surface-300 border-0 border-round-2xl">
+        <div class="grid">
+          <!--        expenditure name and amount-->
+          <div class="field mb-0 col-12 md:col-4">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><em class="pi pi-calculator"></em></span>
+              <input formControlName="expenditureName" pInputText placeholder="Expenditure Name"/>
+            </div>
+          </div>
+          <div class="field mb-0 col-12 md:col-4">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon">₹</span>
+              <input formControlName="expenditureAmount" pInputText placeholder="Expenditure Amount"/>
+            </div>
+          </div>
+          <div class="field mb-0 col-12 md:col-4">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon">
+                <em class="pi pi-list"></em>
+              </span>
+              <input formControlName="expenditureType" pInputText placeholder="Expenditure Type" type="text"/>
+            </div>
+          </div>
+          <div class="field mb-0 col-12 md:col-4">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><em class="pi pi-calendar"></em></span>
+              <p-calendar [styleClass]="'w-full'" formControlName="expenditureDate"
+                          placeholder="Expenditure Date"></p-calendar>
+              <!--              <input formControlName="expenditureDate" pInputText placeholder="Expenditure Date"/>-->
+            </div>
+          </div>
+          <div class="field mb-0 col-12 md:col-4">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><em class="pi pi-user"></em></span>
+              <input formControlName="expenditurePaidBy" pInputText placeholder="Expenditure Paid By"/>
+            </div>
+          </div>
+          <div class="field mb-0 col-12 md:col-4">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><em class="pi pi-tag"></em></span>
+              <input formControlName="expenditureCategory" pInputText placeholder="Expenditure Category"/>
+            </div>
+          </div>
+          <div class="field mb-0 col-12 md:col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon">
+                <em class="pi pi-book"></em>
+              </span>
+              <textarea [autoResize]="true" cols="30" formControlName="expenditureDescription" maxlength="150"
+                        pInputTextarea placeholder="Expenditure Description" rows="5"></textarea>
+              <span
+                class="p-inputgroup-addon">{{150 - (singleExpenditureForm.get('expenditureDescription')?.value).length}}</span>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!--<div class="formgrid grid">
+      <div class="field mb-0 col-12 md:col-6">
+        <label for="firstname6">Firstname</label>
+        <input id="firstname6" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+      </div>
+      <div class="field mb-0 col-12 md:col-6">
+        <label for="lastname6">Lastname</label>
+        <input id="lastname6" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+      </div>
+      <div class="field mb-0 col-12">
+        <label for="address">Address</label>
+        <textarea id="address" type="text" rows="4" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"></textarea>
+      </div>
+      <div class="field mb-0 col-12 md:col-6">
+        <label for="city">City</label>
+        <input id="city" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+      </div>
+      <div class="field mb-0 col-12 md:col-3">
+        <label for="state">State</label>
+        <select id="state" class="w-full text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round outline-none focus:border-primary" style="appearance: auto">
+          <option>Arizona</option>
+          <option>California</option>
+          <option>Florida</option>
+          <option>Ohio</option>
+          <option>Washington</option>
+        </select>
+      </div>
+      <div class="field mb-0 col-12 md:col-3">
+        <label for="zip">Zip</label>
+        <input id="zip" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+      </div>
+    </div>-->
+
+    <!--body content ends-->
+  </div>
+</p-card>
