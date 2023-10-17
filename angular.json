@@ -20,6 +20,7 @@
             "outputPath": "dist/home-finance-management-frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
+            "baseHref": "/home-management/",
             "polyfills": [
               "zone.js"
             ],
@@ -30,6 +31,9 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+              "./node_modules/primeng/resources/primeng.min.css",
+              "./node_modules/primeflex/primeflex.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -56,7 +60,8 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "outputHashing": "all"
             }
           },
           "defaultConfiguration": "production"

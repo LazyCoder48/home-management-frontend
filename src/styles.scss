@@ -1,1 +1,61 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+@font-face {
+  font-family: "fc-bold";
+  src: url("assets/fonts/FiraCode-Bold.ttf");
+}
+
+@font-face {
+  font-family: "fc-regular";
+  src: url("assets/fonts/FiraCode-Regular.ttf");
+}
+
+@font-face {
+  font-family: "fc-light";
+  src: url("assets/fonts/FiraCode-Light.ttf");
+}
+
+@font-face {
+  font-family: "fc-medium";
+  src: url("assets/fonts/FiraCode-Medium.ttf");
+}
+
+@font-face {
+  font-family: "fc-semi-bold";
+  src: url("assets/fonts/FiraCode-SemiBold.ttf");
+}
+
+$fc-bold: 'fc-bold';
+$fc-regular: 'fc-regular';
+$fc-light: 'fc-light';
+$fc-medium: 'fc-medium';
+$fc-semi-bold: 'fc-semi-bold';
+
+.fc-bold {
+  font-family: $fc-bold;
+}
+
+.fc-regular {
+  font-family: $fc-regular;
+}
+
+.fc-light {
+  font-family: $fc-light;
+}
+
+.fc-medium {
+  font-family: $fc-medium;
+}
+
+.fc-semi-bold {
+  font-family: $fc-semi-bold;
+}
+
+* {
+  font-family: $fc-regular;
+}
+
+label {
+  font-family: $fc-semi-bold;
+}
